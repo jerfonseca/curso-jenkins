@@ -1,5 +1,4 @@
 #!/bin/bash
-apt-get install -y python3-venv
 
 echo "Activando el entorno virtual..."
 if [ ! -d "venv" ]; then
