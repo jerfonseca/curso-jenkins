@@ -1,5 +1,21 @@
 #!/bin/bash
 
+echo "========== DEBUG JENKINS =========="
+echo "Script: $(realpath "$0")"
+echo "Directorio: $(pwd)"
+echo "Usuario: $(whoami)"
+echo "Python:"
+which python3
+python3 --version
+
+echo "Contenido del workspace:"
+ls -la
+
+echo "Contenido de venv:"
+ls -la venv 2>/dev/null || echo "venv NO EXISTE"
+
+echo "==================================="
+
 echo "Iniciando ejecución de pruebas en jenkins..."
 
 if [ ! -f "venv/bin/python" ]; then
