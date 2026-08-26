@@ -9,7 +9,7 @@ pipeline{
         }
         stage('Test') {
             steps {
-                sh 'mvn test'
+                sh 'cd maven_project && mvn test'
             }
         }
         stage('Deploy') {
