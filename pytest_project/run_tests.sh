@@ -1,9 +1,10 @@
 #!/bin/bash
+sudo apt-get install -y python3-venv
 
 echo "Activando el entorno virtual..."
 if [ ! -d "venv" ]; then
     echo "Creando entorno virtual..."
-    python -m venv venv
+    python3 -m venv venv
 fi
 source venv/bin/activate
 
