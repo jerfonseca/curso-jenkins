@@ -2,8 +2,9 @@
 
 echo "Iniciando ejecución de pruebas en jenkins..."
 
-if [ ! -d "venv" ]; then
-    echo "Entorno virtual no encontrado. Creando entorno virtual..."
+if [ ! -f "venv/bin/python" ]; then
+    echo "Entorno virtual no encontrado o incompleto. Creando entorno virtual..."
+    rm -rf venv
     python3 -m venv venv
 fi
 
