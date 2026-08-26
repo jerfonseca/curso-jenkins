@@ -17,7 +17,12 @@ ls -la venv 2>/dev/null || echo "venv NO EXISTE"
 echo "==================================="
 
 echo "Iniciando ejecución de pruebas en jenkins..."
-python3 -m venv venv
+
+if [ ! -f "venv/bin/python" ]; then
+    echo "Entorno virtual no encontrado o incompleto. Creando entorno virtual..."
+    rm -rf venv
+    python3 -m venv venv
+fi
 
 echo "========== TEST VENV =========="
 
